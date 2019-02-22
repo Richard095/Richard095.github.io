@@ -1,0 +1,10 @@
+.text{
+    padding: 5px;
+}
+.card-container{
+    transition: all 1s ease;
+}
+.card-container:hover {
+    transform: rotate(360deg);
+}
+
