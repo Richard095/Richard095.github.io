@@ -1,6 +1,7 @@
 .text{
     padding: 5px;
 }
+
 .card-container{
     transition: all 1s ease;
 }
