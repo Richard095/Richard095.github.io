@@ -15,11 +15,16 @@ Zepto(function($){
     const ppie =7;
 
     let masa = $("#masa");
-    let size = $("input[name-tamano]");
+    let size = $("input[name=tamano]").filter(checked);
+    let ingredientes = $(".ingrediente").filter(checked);
+    let iexs = $(".iex").filter(checked);
+    console.log(ingredientes);
     console.log(size.val());
 
     costo += sizes[size.attr("id")];
-    costo += masa[masa.val()];
+    costo += masas[masa.val()];
+    costo += ingredientes.lenght * ppi;
+    costo += iexs.lenght * ppie;
     console.log(costo);
 })
 
