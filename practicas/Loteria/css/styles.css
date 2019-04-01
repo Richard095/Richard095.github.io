@@ -49,7 +49,7 @@ body{
     background: #f2f2f2f2;
 }
 .table-one, .table-two{
-    height: 600px;
+    height: 600px auto;
     background: #e8eaf6; 
     padding: 16px;
 }
@@ -153,5 +153,7 @@ h6{
             opacity: 0.5;
             filter: alpha(opacity=50);
          } 
+
+
 
 }
