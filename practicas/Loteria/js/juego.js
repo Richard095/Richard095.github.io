@@ -202,7 +202,8 @@ $(document).ready(function () {
                  labelPJ2.text(PJ2);
 
             } else {
-                
+                let painted = $(".hide").find("p.piedra");
+                painted.remove();
                 location.href="index.html";
             }
         }
@@ -246,6 +247,8 @@ $(document).ready(function () {
                 let labelPJ2 = $("#PJ2"); 
                 labelPJ2.text(PJ2);
             } else {
+                let painted = $(".hide").find("p.piedra");
+                painted.remove();
                 location.href="index.html";
             }
 
