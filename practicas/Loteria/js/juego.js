@@ -188,7 +188,7 @@ $(document).ready(function () {
             let next = confirm("Ganaste " + name + " ¿Deseas seguir con la partida ?");
             if (next) {
 
-                window.location.replace("table.html");
+                window.location.reload();
                 let J1 = getCookie("J1");
                 let setVal = parseInt(J1);
                 let val = setVal + 1;
@@ -226,7 +226,7 @@ $(document).ready(function () {
 
             if (next) {
 
-                window.location.replace("table.html");
+                window.location.reload();
                 let J2 = getCookie("J2");
                 let setVal = parseInt(J2);
                 let val = setVal + 1;
