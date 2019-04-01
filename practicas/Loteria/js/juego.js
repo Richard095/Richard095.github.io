@@ -187,16 +187,23 @@ $(document).ready(function () {
             let name = getCookie("player1");
             let next = confirm("Ganaste " + name + " ¿Deseas seguir con la partida ?");
             if (next) {
-
-                window.location.reload();
+                restart();
                 let J1 = getCookie("J1");
                 let setVal = parseInt(J1);
                 let val = setVal + 1;
                 setCookie("J1", val, 24);
+              
+
+                 let PJ1 = getCookie("J1"); 
+                 let labelPJ1 = $("#PJ1"); 
+                 labelPJ1.text(PJ1);
+                 let PJ2 = getCookie("J2"); 
+                 let labelPJ2 = $("#PJ2"); 
+                 labelPJ2.text(PJ2);
 
             } else {
-
-                window.location.replace("index.html");
+                
+                location.href="index.html";
             }
         }
 
@@ -226,13 +233,20 @@ $(document).ready(function () {
 
             if (next) {
 
-                window.location.reload();
+                restart();
                 let J2 = getCookie("J2");
                 let setVal = parseInt(J2);
                 let val = setVal + 1;
                 setCookie("J2", val, 24);
+                
+                let PJ1 = getCookie("J1"); 
+                let labelPJ1 = $("#PJ1"); 
+                labelPJ1.text(PJ1);
+                let PJ2 = getCookie("J2"); 
+                let labelPJ2 = $("#PJ2"); 
+                labelPJ2.text(PJ2);
             } else {
-                window.location.replace("index.html");
+                location.href="index.html";
             }
 
         }
@@ -425,6 +439,19 @@ $(document).ready(function () {
                 setCookie("TABLEROJ2 ", TA2, 1);
             }
         }
+    }
+
+    function restart() {
+        let painted = $(".hide").find("p.piedra");
+        painted.remove();
+
+        image = $(".img-card");
+        pos = 0;
+        cards = new Array();
+        cards = shuffle(imgArray);
+
+        image.attr("src", "img/default.png");
+
     }
 
     function relaseTables(val1, val2) {
