@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/juego.js"></script>
+    <title>Loteria!</title>
+</head>
+
+<body>
+    <div class="row p-3 m-2 d-flex justify-content-between ">
+        <div class="col-sm-12 col-md-12  d-flex flex-wrap justify-content-center mt-2 pt-3">
+            <div class="register-Players">
+                <h3 class="text">Lotería </h3>
+                <form action="table.html" method="GET">
+                    <div class="form-row m-3">
+                        <div class="col-sm-12 col-md-6 pt-2">
+                            <input type="text" class="form-control input1 " placeholder="Jugador 1" id="player1">
+                        </div>
+                        <div class="col-sm-12 col-md-6 pt-2">
+                            <input type="text" class="form-control input2  " placeholder="Jugador 2" id="player2">
+                        </div>
+                        <div class="col-sm-12 col-md-12 pt-2 ">
+                            <button type="submit" class="btn btn-primary start"> Iniciar Juego</button>
+                        </div>
+                        <div class="col-sm-12 col-md-12 pt-2 ">
+                            <label for="formControlRange m-2 " class="text">Seleccionar carta</label>
+                        </div>
+                        <div class="row m-3 content-targets d-flex d-flex justify-content-between">
+                            <div class=" col-sm-12  col-md-3 pt-2 content-target ">
+                                <img class="img-table" src="img/T1.png" alt="Puede que contenga una imagen " id="T1">
+                            </div>
+                            <div class="col-sm-12 col-md-3 pt-2 content-target ">
+                                <img class="img-table" src="img/T2.png" alt="Puede que contenga una imagen" id="T2">
+                            </div>
+                            <div class="col-sm-12 col-md-3 pt-2 content-target">
+                                <img class="img-table" class="" src="img/T3.png" alt="Puede que contenga una imagen" id="T3">
+                            </div>
+                            <div class=" col-sm-12 col-md-3 pt-2 content-target">
+                                <img class="img-table" src="img/T4.png" alt="Puede que contenga una imagen" id="T4">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <p class="team">Integrantes :  Ricardo Ramirez Mendez ---- Julio Cesar Salazar Perez</p>
+            </div>
+           
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</body>
+
+</html>

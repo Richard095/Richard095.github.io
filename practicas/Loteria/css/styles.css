@@ -1,0 +1,157 @@
+
+/*Start Styles*/
+
+
+.register-Players{
+    width: 60% ;
+    height:500px auto ;
+    background: #3f51b5;
+    text-align: center;
+}
+.text{
+    padding: 16px;
+    color: #ffffff;
+}
+.start{
+    margin-top: 5px;
+   
+}
+.start{
+    color: #ffffff;
+    text-decoration: none;
+}
+.form-group{
+    text-align: center;
+    background: #3f51b5;
+    color: #ffffff;
+}
+
+.img-table{
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.num{
+    width: 10px auto;
+     height: 10px auto;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+    background: #e8eaf6;
+    color: #3f51b5;
+    size: 5px;
+}
+
+/*-----------------------*/
+body{
+    background: #f2f2f2f2;
+}
+.table-one, .table-two{
+    height: 600px;
+    background: #e8eaf6; 
+    padding: 16px;
+}
+
+
+.table-controls{
+    height: 600px;
+    background: #e8eaf6;
+    
+}
+.card{
+    width: 22%  ;
+    height: 20%;
+    background: #e8eaf6;
+    
+}
+.split-card{
+    width: auto;  
+}
+.button-takeCard{
+    padding-top: 5px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 16px;
+    color: #ffffff;
+}
+.btn:focus {
+    /*Quitar estilos a btn*/
+    outline: none;
+    box-shadow: none;
+}
+
+img{
+    background-size: cover;
+    height: 100%;
+    position: relative;
+   
+}
+h6{
+    background: #3f51b5;
+    color: #ffffff;
+    padding: 2px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.piedra{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000000;
+  color: #000000;
+  padding: 10px;
+  -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+}
+.team{
+    color: aliceblue;
+}
+
+/*Mediaquerys*/
+@media only screen
+  and (min-width: 320px) 
+  and (max-width: 736px) 
+  and (orientation: portrait) 
+{ 
+    /*INDEX*/
+    .register-Players{
+        width: 100% ;
+        height:400px auto ;
+        background: #3f51b5;
+        text-align: center;
+    }
+
+
+    /*TABLE*/
+    .table-one, .table-two{
+        height: 380px ;
+        background: #e8eaf6; 
+        padding: 16px;
+    }
+    .table-controls{
+        height: 500px;
+        background: #e8eaf6;
+        
+    }
+
+    .piedra{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        background-color: #000000;
+        color: #000000;
+        padding: 10px;
+        -moz-border-radius: 50%;
+           -webkit-border-radius: 50%;
+           border-radius: 50%;
+      }
+      .img-table{
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+         } 
+
+}
