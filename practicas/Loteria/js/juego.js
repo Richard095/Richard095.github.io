@@ -1,12 +1,12 @@
 $(document).ready(function () {
-  
+
     $(".start").attr("disabled", true);
 
 
     //MAIN PAGE
     let TABLEJ1 = new Array();
     let TABLEJ2 = new Array();
-    let arraychosse = new Array();
+    let arraychosse = new Array(); //For add tables selected
     loadTable();
     
     $(".start").click(function () {
@@ -18,7 +18,6 @@ $(document).ready(function () {
 
         setCookie("J1", 0, 8);
         setCookie("J2", 0, 8);
-
     });
 
     let TAB1 = getCookie("TABLEROJ1");
@@ -27,9 +26,8 @@ $(document).ready(function () {
     let val1 = parseInt(TAB1);
     let val2 = parseInt(TAB2);
     relaseTables(val1, val2);
-    // console.log("Jugador I = " + TAB1 + " Jugador II " + TAB2);
 
-
+    
 
     let imgArray = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png', '10.png', '11.png',
         '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png', '20.png', '21.png', '22.png', '23.png', '24.png', '25.png',
@@ -46,7 +44,6 @@ $(document).ready(function () {
     show_Table_Player_Two();
     getPlayers();
 
-
     //Release cards 
     let image = $(".img-card");
     let pos = 0;
@@ -54,7 +51,9 @@ $(document).ready(function () {
     cards = shuffle(imgArray);
 
 
+    //Taking cards and putting checking Tables  from the game
     $("#takeCard").click(function () {
+        $('.img-card').hide();
         if (pos < cards.length) {
             image.attr('src', './img/' + cards[pos]);
             let taked = cards[pos];
@@ -79,9 +78,11 @@ $(document).ready(function () {
         } else {
             alert("Se acabaron las imagenes XD");
         }
+        $('.img-card').slideDown();
         pos++;
     });
 
+    
     function validate(){
         verifyTable1();
         verifyTable2();
@@ -101,7 +102,7 @@ $(document).ready(function () {
         return array;
     }
 
-    /*Genereting tables for each players*/
+    /*Genereting tables for each players --------------------TABLES*/
     function show_Table_Player_One() {
         let container = $(".table-one").children();
         cards_ReadyP1 = TABLEJ1;
@@ -123,7 +124,7 @@ $(document).ready(function () {
     }
 
 
-    //Set cookies
+    //Function for Set cookies 
     function setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -131,7 +132,7 @@ $(document).ready(function () {
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
-    //Get Cookies
+    //Function for Get Cookies
     function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
@@ -148,8 +149,6 @@ $(document).ready(function () {
         return "";
     }
 
-    //Delete cookies
-
 
     function getPlayers() {
         let name1 = getCookie("player1");
@@ -161,6 +160,12 @@ $(document).ready(function () {
         //Info PTS
         let JUG1 = $("#J1"); JUG1.text(name1); let PJ1 = getCookie("J1"); let labelPJ1 = $("#PJ1"); labelPJ1.text(PJ1);
         let JUG2 = $("#J2"); JUG2.text(name2); let PJ2 = getCookie("J2"); let labelPJ2 = $("#PJ2"); labelPJ2.text(PJ2);
+
+        $('.table-one').hide();
+        $('.table-two').hide();
+
+        $('.table-one').fadeIn(3000);
+        $('.table-two').fadeIn(3000);
     }
 
 
@@ -253,21 +258,8 @@ $(document).ready(function () {
             }
 
         }
-
-
     }
 
-
-    /* 
-        var elementImg = $("<img></img>").attr('src','img/1.png');
-        container.eq(0).append(elementImg);
-        let containerImg = $(".card"); 
-        let imgElement = $("<img></img>").attr('src','img/'+arrayImagen);
-        container[POS].style.backgroundColor = "#e91e63";
-        container[15].style.backgroundColor = "yellow";
-        window.setInterval("location.reload()", 2000);
-    
-    */
 
 
     function loadTable() {
@@ -409,7 +401,7 @@ $(document).ready(function () {
                     parent.addClass("active");
                     prepareTable();
                     if (arraychosse.length == 2 ) {
-                        $(".start").attr("disabled", false);
+                        $(".start").attr("disabled", false);  //Button on status Active
                     }
                 }
 
@@ -429,6 +421,8 @@ $(document).ready(function () {
         });
     }
 
+
+    //Saving positions from tables selected
     function prepareTable() {
         let targets = $(".content-targets").children();
         arraychosse = [];
@@ -444,9 +438,10 @@ $(document).ready(function () {
         }
     }
 
+
     function restart() {
         let painted = $(".hide").find("p.piedra");
-        painted.remove();
+        painted.remove(); 
 
         image = $(".img-card");
         pos = 0;
